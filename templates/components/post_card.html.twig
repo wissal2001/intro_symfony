@@ -1,0 +1,9 @@
+<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+    <h2>{{ post.title }}</h2>
+
+    <p>{{ post.content|slice(0, 50) }}...</p>
+
+    <a href="{{ path('blog_show', { id: post.id }) }}">
+        Lire l’article
+    </a>
+</div>

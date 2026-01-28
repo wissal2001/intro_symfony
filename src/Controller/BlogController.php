@@ -11,12 +11,15 @@ class BlogController extends AbstractController
     #[Route('/blog', name: 'blog_list')]
     public function list(): Response
     {
-        return new Response('Liste des articles');
+        return $this->render('blog/list.html.twig');
     }
 
     #[Route('/blog/{id}', name: 'blog_show', requirements: ['id' => '\d+'])]
     public function show(int $id): Response
     {
-        return new Response('Article numéro ' . $id);
+        return $this->render('blog/show.html.twig', [
+            'id' => $id
+        ]);
     }
 }
+
